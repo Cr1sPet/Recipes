@@ -9,8 +9,8 @@ Rest API
 * Edit file ./pom.xml if you use a DBMS other than postgreSQL (need to add jdbc-driver to the dependencies block)
 
 ```
-        mvn clean package && \
-        java -jar target/recipes-0.0.1-SNAPSHOT.jar
+mvn clean package && \
+java -jar target/recipes-0.0.1-SNAPSHOT.jar
 ```
 
 ## About the Service
