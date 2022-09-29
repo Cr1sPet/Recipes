@@ -69,13 +69,13 @@ DELETE /api/recipes/{id}
 GET /api/recipes/{id}
 ```
 
-### Search recipe by name
+### Ыearch for recipes by name
 
 ```
 GET /api/recipes/search/?name=Warming Ginder Tea
 ```
 
-### Search recipe by category
+### search for recipes by category
 
 ```
 GET /api/recipes/search/?category=beverage
