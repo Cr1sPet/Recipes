@@ -1,22 +1,48 @@
 # Recipes
-Rest API
+
+## About the Service
+
+The application is just a simple RESTful service that allows to perform CRUD operations with kitchen recipes and provides Basic HTTP authentication. It uses a PostgreSQL database to store the data. You can also use any other relational database. If your database connection properties work, you can call some REST endpoints defined in ```localhost``` on **port 8080**. (see below)
 
 ## How to Run 
 
 * Clone this repository
-* Change dir to root of project
-* Edit file ./src/main/resources/application.properties - set database info
-* Edit file ./pom.xml if you use a DBMS other than postgreSQL (need to add jdbc-driver to the dependencies block)
+* Change the dir to the root of the project
+* Edit [application.properties](src/main/resources/application.properties) - set database info (db url, db driver, username, password, dialect)
+* Edit [pom.xml](./pom.xml) if you use a DBMS other than postgreSQL (need to add jdbc-driver to the dependencies block)
+
+### Build :
 
 ```
-mvn clean package && \
+mvn clean package
+```
+### Run :
+```
 java -jar target/recipes-0.0.1-SNAPSHOT.jar
 ```
 
-## About the Service
+## Allowed endpoints
 
-The application is just a simple REST service that allows to perform CRUD operations with kitchen recipes. It uses a PostgreSQL database to store the data. You can also use any other relational database. If your database connection properties work, you can call some REST endpoints defined in ```localhost``` on **port 8080**. (see below)
+### User registration
 
+```
+POST /api/register
+
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email" : "email@exampl.example",
+    "password" : "example_password"
+}
+```
+
+### User authentification
+
+
+To unlock the remaining endpoints, you need to log in using http basic auth. How it looks in Postman :
+
+![image](https://user-images.githubusercontent.com/93244882/193427593-3a1ab8d3-0f49-4c6d-97d0-08c97aba1531.png)
 
 ### Create a recipe
 
@@ -69,15 +95,14 @@ DELETE /api/recipes/{id}
 GET /api/recipes/{id}
 ```
 
-### Ыearch for recipes by name
+### Search for recipes by name
 
 ```
 GET /api/recipes/search/?name=Warming Ginder Tea
 ```
 
-### search for recipes by category
+### Search for recipes by category
 
 ```
 GET /api/recipes/search/?category=beverage
 ```
-
