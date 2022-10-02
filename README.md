@@ -1,4 +1,4 @@
-# Recipes
+# Recipes (Hyperskill project)
 
 ## About the Service
 
